@@ -43,7 +43,7 @@ var rotate = function (nums, k) {
  * splice unshift
  */
 
-var rotate_answer = function (nums) {
+var rotate_answer = function (nums, k) {
     let l = nums.length;
     k %= l;
     nums.unshift(...nums.splice(l - k, k));
