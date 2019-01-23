@@ -23,7 +23,7 @@
  */
 
 
- // my algorithm
+// my algorithm
 /**
  * @param {number[]} nums1
  * @param {number[]} nums2
@@ -32,47 +32,47 @@
  * 思路：使用map来统计相同的数字和出现次数
  *      其实就是熟悉map的api
  */
- var intersect = function(nums1, nums2) {
+var intersect = function (nums1, nums2) {
     var result = [];
-    
+
     var map1 = setMap(nums1);
     var map2 = setMap(nums2);
-    
-    for(var [key,value] of map1) {
+
+    for (var [key, value] of map1) {
         var final = map2.get(key);
-        
-        if(typeof final !== "undefined") {
-            var maxCount = getMin(map1.get(key),map2.get(key));
-            for(var j = 0;j < maxCount;j++) {
+
+        if (typeof final !== "undefined") {
+            var maxCount = getMin(map1.get(key), map2.get(key));
+            for (var j = 0; j < maxCount; j++) {
                 result.push(key);
             }
         }
     }
-    
+
     return result;
 };
-var setMap = function(nums){
+var setMap = function (nums) {
     var map = new Map();
-    for(var num of nums) {
+    for (var num of nums) {
         if (typeof map.get(num) !== "undefined") {
             var count = map.get(num);
-            map.set(num,++count);
+            map.set(num, ++count);
         } else {
-            map.set(num,1);
+            map.set(num, 1);
         }
     }
     console.log(map);
     return map;
 };
-var getMin = function(num1,num2) {
-    return (num1 < num2)?num1:num2;
+var getMin = function (num1, num2) {
+    return (num1 < num2) ? num1 : num2;
 }
 
 // answer algorithm
 /**
  * 其实可以简单实现一个小型map，而且速度更快
  */
-let intersect_answer = function(nums1, nums2) {
+let intersect_answer = function (nums1, nums2) {
     let res = [];
     let map = {};
     for (let e of nums1) {
