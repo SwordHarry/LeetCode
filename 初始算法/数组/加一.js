@@ -48,25 +48,24 @@ var plusOne = function (digits) {
  * 
  * 合理使用标志位 减少循环次数，提高效率
  */
-var plusOne_answer = function(digits) {
+var plusOne_answer = function (digits) {
     let addFlag = true;
-     
-    for(let i = digits.length -1; i >= 0; i--) {
-        let num = digits[i];
-        if(addFlag) {
+
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (addFlag) {
             digits[i]++;
-            if(digits[i] === 10) {
+            if (digits[i] === 10) {
                 digits[i] = 0;
                 addFlag = true;
-            }else {
+            } else {
                 addFlag = false;
             }
         }
     }
-     
-     if(addFlag) {
-         digits.unshift(1);
-     }
-     
-     return digits;
- };
+
+    if (addFlag) {
+        digits.unshift(1);
+    }
+
+    return digits;
+};

@@ -42,7 +42,7 @@ var rotate = function (nums, k) {
  * 充分使用 javascript 中对数组操作的 api 实现 旋转数组操作
  * splice unshift
  */
-
+// unshift splice ...
 var rotate_answer = function (nums, k) {
     let l = nums.length;
     k %= l;

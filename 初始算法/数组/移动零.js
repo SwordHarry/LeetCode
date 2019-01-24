@@ -21,7 +21,6 @@
 /**
  * 我觉得这条题因为有 js 原生的数组 api 所以不难，
  * 可是如果不准使用api的情况下又该怎么实现
- * 
  *  */ 
 var moveZeroes = function(nums) {
     var zeroCount = 0;

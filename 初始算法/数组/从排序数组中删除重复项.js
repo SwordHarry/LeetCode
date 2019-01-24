@@ -47,7 +47,7 @@ console.log(removeDuplicates_answer(nums), nums);
 // filter api
 var removeDuplicates_filter = function (nums) {
     return nums.filter((item, index, self) => {
-        return self.indexOf(item) == index;
+        return self.indexOf(item) === index;
     });
 }
 var newArr = removeDuplicates_filter(nums);
