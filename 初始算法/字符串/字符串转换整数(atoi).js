@@ -69,5 +69,5 @@ var myAtoi_answer = function (str) {
         num = signal === '-' ? Math.pow(2, 31) : Math.pow(2, 31) - 1;
     }
 
-    return signal === '-' ? +('-' + num) : num;
+    return signal === '-' ? (-num) : num;
 };
