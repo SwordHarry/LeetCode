@@ -1,0 +1,35 @@
+<script src="./反转链表.js"></script>
+<script>
+    var reverseList_recursion = function (head) {
+        let node;
+        const _reverse = (head) => {
+            if (!head) {
+                return null;
+            }
+            const reverseHead = arguments.callee(head.next);
+            if (reverseHead) {
+                reverseHead.next = head;
+                head.next = null;
+            } else {
+                node = head;
+            }
+            return head;
+        };
+        _reverse(head);
+        return node;
+    };
+
+    function ListNode(val) {
+        this.val = val;
+        this.next = null;
+    }
+
+    const head = new ListNode(1);
+    head.next = new ListNode(2);
+    head.next.next = new ListNode(3);
+    head.next.next.next = new ListNode(4);
+    head.next.next.next.next = new ListNode(5);
+
+    console.log(reverseList_recursion(head));
+    console.log(null == undefined)
+</script>
