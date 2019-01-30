@@ -25,3 +25,43 @@
 解释: 输入为: [5,1,4,null,null,3,6]。
      根节点的值为 5 ，但是其右子节点值为 4 。
  */
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+/**
+ * 左 < 根 < 右 
+ * 思路： 递归，中序遍历树，按 左 中 右 的形式遍历，将结点从非线性转化为线性
+ */
+var isValidBST = function (root) {
+    if (!root) {
+        return true;
+    }
+    const list = [];
+    checkBST(root, list);
+
+    const len = list.length;
+    for (let i = 0; i < len - 1; i++) {
+        if (list[i].val >= list[i + 1].val)
+            return false;
+    }
+    return true;
+};
+
+var checkBST = function (node, list) {
+    if (!node) {
+        return;
+    }
+
+    checkBST(node.left, list);
+    list.push(node);
+    checkBST(node.right, list);
+};
