@@ -41,7 +41,7 @@
  * 左 < 根 < 右 
  * 思路： 递归，中序遍历树，按 左 中 右 的形式遍历，将结点从非线性转化为线性
  */
-var isValidBST = function (root) {
+var isValidBST_recursion = function (root) {
     if (!root) {
         return true;
     }
@@ -64,4 +64,29 @@ var checkBST = function (node, list) {
     checkBST(node.left, list);
     list.push(node);
     checkBST(node.right, list);
+};
+
+
+// 使用栈实现 中序遍历 ，在中序遍历的过程中可以判断 左 < 中 < 右
+var isValidBST_iteration = function (root) {
+    if (!root) {
+        return true;
+    }
+
+    const stack = [];
+    let node = root,
+        pre = null;
+    while (node || stack.length) {
+        while (node) {
+            stack.push(node);
+            node = node.left;
+        }
+
+        node = stack.pop();
+        if (pre && node.val <= pre.val)
+            return false;
+        pre = node;
+        node = node.right;
+    }
+    return true;
 };

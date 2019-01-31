@@ -1,1 +1,25 @@
-<script src="二叉树的最大深度.js"></script>
+<script src="将有序数组转换成二叉搜索树.js"></script>
+<script>
+    var sortedArrayToBST = function (nums) {
+        const len = nums.length;
+        if (!len) {
+            return null;
+        }
+
+        const halfLen = ~~(len / 2);
+
+        const root = new TreeNode(nums[halfLen]);
+        const nums1 = nums.splice(0, halfLen);
+        const nums2 = nums.splice(halfLen, len);
+        root.left = arguments.callee(nums1);
+        root.right = arguments.callee(nums2);
+
+        return root;
+    };
+
+    function TreeNode(val) {
+        this.val = val;
+        this.left = this.right = null;
+    }
+    console.log(sortedArrayToBST([-10, -3, 0, 5, 9]));
+</script>
