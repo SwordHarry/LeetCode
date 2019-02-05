@@ -18,6 +18,14 @@
    15   7
  */
 /**
+ * 
+ * 思路：中序遍历： 左 根 右
+ *      后序遍历： 左 右 根
+ *      故后序遍历数组的最后一项必定是树或子树的根
+ *      根据后序遍历在 postorder 中确定根，再用根在 inorder 中确定 左 右子树的两个子数组
+ *      左右子树的子数组又可以看成是两个不同的树，如此递归，直到子数组的长度为零，返回null
+ */
+/**
  * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
@@ -48,12 +56,6 @@ var buildTree = function (inorder, postorder) {
 
     root.left = createTree(inLeftArr, postLeftArr);
     root.right = createTree(inRightArr, postRightArr);
-
-    if (inRightArr.length) {
-        root.right = buildTree(inRightArr, postRightArr);
-    } else {
-        root.right = null;
-    }
 
     return root;
 };
