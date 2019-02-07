@@ -83,7 +83,7 @@ var connect = function (root) {
  *  将树当作桥梁，从当前层的最左节点往右直接连通，
  *  并且如果遇到null就直接跳过，因为初始化时就为null
  */
-let connect = function (root) {
+var connect_iteration = function (root) {
     if (!root) return;
     let curr = root;
     while (root) {
@@ -98,3 +98,22 @@ let connect = function (root) {
     }
 
 };
+/**
+ * 递归法
+ *      利用其完美二叉树的特性
+ */
+var connect_recursion = function (root) {
+    if (!root) {
+        return;
+    }
+
+    if (root.left) {
+        root.left.next = root.right;
+        if (root.next) {
+            root.right.next = root.next.left;
+        }
+    }
+
+    connect_recursion(root.left);
+    connect_recursion(root.right);
+}
