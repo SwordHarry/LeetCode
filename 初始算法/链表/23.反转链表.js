@@ -54,36 +54,39 @@ var reverseList = function (head) {
 
 // Iteration algorithm
 // 迭代版：三指针 实现 边遍历边反转
-var reverseList_iteration = function (head) {
-    let curp = head,
-        pre = null,
-        currenthp;
-    while (curp) {
-        currenthp = curp.next;
-        curp.next = pre;
-        pre = curp;
-        curp = currenthp;
+var reverseList = function (head) {
+    if (!head) {
+        return null;
+    }
+    let pre = null;
+    let next = head.next;
+
+    while (head) {
+        head.next = pre;
+        pre = head;
+        head = next;
+        next = head ? head.next : null;
     }
     return pre;
 };
 
 // Recursive algorithm
 // 递归版，采用闭包将最后的头结点取得
+// 二刷：代码更加简洁
 var reverseList_recursion = function (head) {
-    let node;
-    const _reverse = (head) => {
-        if (!head) {
-            return null;
+    if (!head) {
+        return null;
+    }
+
+    const _reverse = function (next, cur) {
+        if (!cur) {
+            return next;
         }
-        const reverseHead = _reverse(head.next);
-        if (reverseHead) {
-            reverseHead.next = head;
-            head.next = null;
-        } else {
-            node = head;
-        }
-        return head;
+        let node = cur.next;
+        cur.next = next;
+        return _reverse(cur, node);
     };
-    _reverse(head);
-    return node;
+
+
+    return _reverse(null, head);
 };
