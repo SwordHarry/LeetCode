@@ -22,28 +22,26 @@
  */
 var mergeTwoLists = function (l1, l2) {
 
-    const head = new ListNode(0);
-    head.next = l1;
-
-    let pre = head;
-    let next = l2 ? l2.next : null;
+    const dummy = new ListNode(0);
+    let cur = dummy;
 
     while (l1 && l2) {
         if (l2.val < l1.val) {
-            pre.next = l2;
-            l2.next = l1;
-            l2 = next;
-            next = l2 ? l2.next : null;
-            pre = pre.next;
+            cur.next = l2;
+            l2 = l2.next;
         } else {
-            pre = l1;
+            cur.next = l1;
             l1 = l1.next;
         }
+        cur = cur.next;
     }
 
+    if (l1) {
+        cur.next = l1;
+    }
     if (l2) {
-        pre.next = l2;
+        cur.next = l2;
     }
 
-    return head.next;
+    return dummy.next;
 };
