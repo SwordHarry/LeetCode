@@ -73,3 +73,29 @@ var maxProfit_answer = function (prices) {
 
     return maxProfit;
 };
+
+// answer algorithm
+/**
+ * 从前向后遍历数组，判断当前是否是最小买入价格，
+ * 若是，则记录为最小买入价格
+ * 保存最大利润，
+ * 并且计算其之后所有的利润
+ *  */ 
+var maxProfit_answer = function(prices) {
+    const len = prices.length;
+    if(!len) {
+        return 0;
+    }
+    
+    let result = 0;
+    let buy = prices[0];
+    for(let i = 0;i < len;i++) {
+        if(buy > prices[i]) {
+            buy = prices[i];
+            continue;
+        }
+        result = Math.max(result,prices[i] - buy);
+    }
+    
+    return result;
+};
