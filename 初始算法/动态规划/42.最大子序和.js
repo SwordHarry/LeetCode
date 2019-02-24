@@ -26,12 +26,15 @@ var maxSubArray = function (nums) {
     let tempSum = nums[0];
     const len = nums.length;
     for (let i = 1; i < len; i++) {
+        // 算法核心
+        // ----------------------------
         if (tempSum > 0) {
             tempSum += nums[i];
         } else {
             tempSum = nums[i];
         }
         sum = Math.max(sum, tempSum);
+        // ----------------------------
     }
     return sum;
 };
