@@ -9,9 +9,9 @@ num1 和num2 都不包含任何前导零。
 你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式。 
  */
 
- /**
-  * 思路：与字符串相乘的思路类似，注意两个数组的长度不一样长而且注意前导0 
-  */
+/**
+ * 思路：与字符串相乘的思路类似，注意两个数组的长度不一样长而且注意前导0 
+ */
 
 /**
  * @param {string} num1
@@ -42,8 +42,6 @@ var addStrings = function (num1, num2) {
         }
         sum[i] = sum[i] % 10;
     }
-
-
 
     return sum.reverse().join('');
 
