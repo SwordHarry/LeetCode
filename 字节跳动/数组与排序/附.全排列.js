@@ -12,7 +12,7 @@
  * @param {number} k
  * @return {string}
  */
-var getPermutation = function (n, k) {
+var getPermutation = function (n) {
     const result = [];
     const arr = [];
     for (let i = 1; i <= n; i++) {
