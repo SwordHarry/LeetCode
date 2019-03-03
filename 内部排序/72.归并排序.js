@@ -8,8 +8,6 @@ function MSort(arr) {
         const mid = ~~(len / 2);
         const left = arr.slice(0, mid);
         const right = arr.slice(mid);
-        MSort(left);
-        MSort(right);
         return _merge(MSort(left), MSort(right));
     } else {
         return arr;

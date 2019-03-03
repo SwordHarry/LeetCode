@@ -57,3 +57,64 @@ var lengthOfLongestSubstring = function (s) {
     }
     return result;
 };
+
+
+// 使用 set 的解法，字节跳动一面 提示
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function (s) {
+    const len = s.length;
+    if (!len) {
+        return 0;
+    }
+
+    let result = 0;
+    let index = 0;
+    let set = new Set();
+    for (let i = 0; i < len; i++) {
+        if (set.has(s[i])) {
+            for (let j = index; j < i; j++) {
+                set.delete(s[j]);
+                if (s[j] === s[i]) {
+                    index = j + 1;
+                    break;
+                }
+            }
+            set.add(s[i]);
+        } else {
+            set.add(s[i]);
+        }
+        result = Math.max(result, set.size);
+    }
+
+    return result;
+};
+
+// answer algorithm
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function (s) {
+    const len = s.length;
+    if (!len) {
+        return 0;
+    }
+
+    let result = 0;
+    let str = '';
+    for (let i = 0; i < len; i++) {
+        let index = str.indexOf(s[i]);
+        if (index === -1) {
+            str += s[i];
+        } else {
+            str = str.substr(index + 1) + s[i];
+        }
+        result = Math.max(str.length, result);
+    }
+
+
+    return result;
+};
