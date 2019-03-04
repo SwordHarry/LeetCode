@@ -20,6 +20,8 @@ nums2 = [2,5,6],       n = 3
  *      如果nums2[j] < nums1[i] 就插入到 nums[i] 的前面，并且m++
  *      如果nums2[j] >= nums1[i] 就 i++ 直到 i > m 为止
  *      若 i > m ，nums2还未插入完毕则将其全部插入
+ * 
+ *      二刷，思路一样但是代码相对简洁
  */
 /**
  * @param {number[]} nums1
@@ -29,26 +31,23 @@ nums2 = [2,5,6],       n = 3
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 var merge = function (nums1, m, nums2, n) {
+
     let i = 0,
         j = 0;
 
     while (i < m && j < n) {
-        if (nums1[i] <= nums2[j]) {
-            i++;
-        } else {
-            // 将 nums1 从i开始整体往后移动
+        if (nums1[i] > nums2[j]) {
             for (let index = m; index > i; index--) {
                 nums1[index] = nums1[index - 1];
             }
             nums1[i] = nums2[j];
-            m++;
-            i++;
             j++;
+            m++;
         }
-    }
-    while (j < n) {
-        nums1[i] = nums2[j];
         i++;
-        j++;
+    }
+
+    while (j < n) {
+        nums1[m++] = nums2[j++];
     }
 };
