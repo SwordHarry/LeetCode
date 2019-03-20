@@ -32,3 +32,19 @@ var moveZeroes = function(nums) {
         }
     }
 };
+
+var moveZeroes_answer = function(nums) {
+    let index = 0;
+    const len = nums.length;
+    
+    for(let i = 0;i < len;i++) {
+        if(nums[i]) {
+            nums[index++] = nums[i];
+        }
+    }
+    
+    while(index < len) {
+        nums[index++] = 0;
+    }
+    
+};

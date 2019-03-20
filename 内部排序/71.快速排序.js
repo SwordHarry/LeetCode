@@ -25,6 +25,6 @@ function _partition(arr, low, high) {
 }
 
 const arr = [49,38,65,97,76,13,27,49];
-
+console.log(arr);
 QSort(arr,0,arr.length - 1);
 console.log(arr);
