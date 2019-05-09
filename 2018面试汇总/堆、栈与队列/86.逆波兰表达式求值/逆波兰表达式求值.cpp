@@ -53,10 +53,7 @@ public:
                     s.push(num2 / num1);
                     break;
                 default:
-                    stringstream ss;
-                    ss << tokens[i];
-                    ss >> num1;
-                    s.push(num1);
+                    s.push(stoi(tokens[i]));
             }
         }
         return s.top();
