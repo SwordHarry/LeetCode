@@ -9,7 +9,8 @@
         "deque": "cpp",
         "iosfwd": "cpp",
         "iomanip": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "limits": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
