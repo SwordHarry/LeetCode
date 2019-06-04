@@ -13,6 +13,15 @@ using namespace std;
  * 
 */
 
+/**
+ * 二分查找 分类：
+ * 
+ *  1. 标准二分查找
+ *  2. 查找 左边界
+ *  3. 查找 右边界
+ * 
+*/
+
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
