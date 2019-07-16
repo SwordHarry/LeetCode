@@ -2,6 +2,14 @@
 using namespace std;
 
 /**
+ *  s1: abcdefg
+ *  s2: cxifog
+ * 
+ *  s: cfg
+ * 
+*/
+
+/**
  * 思路：
  *      动态规划
  *      dp[i][j]表示 s1 前i个字符和 s2 前j个字符的最小ASCII码删除和

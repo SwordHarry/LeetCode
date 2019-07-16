@@ -196,7 +196,7 @@
 
 #### 南大
 
-1.单词接龙 \*\*<br/>2.1-最大子矩阵<br/>3.2-SurroundedRegions<br/>
+1.单词接龙 \*\*<br/>2.1-最大子矩阵<br/>3.2-SurroundedRegions<br/>4.1-最小数<br/>3.前序后序得二叉树数目<br/>
 
 #### 动态规划 Dynamic Programming
 
@@ -208,4 +208,4 @@
 1.最长回文串<br/>2.最长回文子串<br/>
 
 ## POJ
-1001-Exponentiation<br/>1002-487-3279<br/>1088-滑雪 \*<br/>1089-intervals<br/>
+1001-Exponentiation<br/>1002-487-3279<br/>1088-滑雪 \*<br/>1089-intervals<br/>1004-Financial Management<br/>
