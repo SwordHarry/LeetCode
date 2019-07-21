@@ -208,4 +208,4 @@
 1.最长回文串<br/>2.最长回文子串<br/>
 
 ## POJ
-1001-Exponentiation<br/>1002-487-3279<br/>1004-FinancialManagement \*<br/>1005-I think i need a houseboat \*<br/>1088-滑雪 \*<br/>1089-intervals<br/>1004-Financial Management<br/>
+1001-Exponentiation<br/>1002-487-3279<br/>1004-Financial_Management \*<br/>1005-I_think_i_need_a_houseboat \*<br/>1007-DNA_Sorting<br/>1088-滑雪 \*<br/>1089-intervals<br/>
